@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 bot = commands.Bot(command_prefix="!")
 
 # Opening JSON file with pfps. Add your open file and update it to match the name here
-data = open('attributes.json', )
+data = open('attributes.json')
 
 # Folder locations for clean pfps, completed pfps, and outfits
 
@@ -35,8 +35,8 @@ outfits = ["suit", "blue", "vote"]
 
 def get_pfp_img_url(id):
     for pfp in pfp_atts:
-        if id == pfp['smbId']:
-            return pfp['imageSrc']
+        if id == pfp['#']:
+            return pfp['Image']
 
 
 # Downloads the pfp from the image URL and saves it in a directory
@@ -74,7 +74,7 @@ async def on_ready():
 # !newfit command executes the get_dressed function and returns the resulting image. It accepts a value between 1 and 5000. Update this to use the command name you want and the values to fit the range of your project
 
 
-@bot.command(name="newfit", brief='Dress your pfp', description='This command will let you apply new fits to your pfp')
+@bot.command(name="newbrero", brief='Dress your pfp', description='This command will let you apply new fits to your pfp')
 async def newfit(ctx, fit: str, pfp_id: int):
     try:
         if fit.lower() in outfits:
